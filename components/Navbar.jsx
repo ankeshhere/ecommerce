@@ -1,0 +1,172 @@
+import { SearchOutlined, MenuOutlined ,CloseOutlined,FacebookFilled,InstagramFilled,LinkedinFilled,YoutubeFilled} from '@ant-design/icons'
+import { ShoppingCartOutlined } from '@ant-design/icons/lib/icons'
+import Image from 'next/image'
+import React, { useState } from 'react'
+import profilePic from '../public/logo_f.jpg'
+import { Drawer, Space } from 'antd'
+import MenuComponent from './MenuComponent'
+import DrawerFooter from './DrawerFooter'
+export default function Navbar () {
+  const [open, setOpen] = useState(false)
+
+  const showDrawer = () => {
+    setOpen(true)
+  }
+
+  const onClose = () => {
+    setOpen(false)
+  }
+  return (
+    <>
+      <div className='header px-3'>
+        <nav className='row pc-header'>
+          <div className='col-md-3'>
+            <Image
+              src={profilePic}
+              alt='Picture of the author'
+              width={250}
+              height={90}
+            />
+          </div>
+          <div className='col-md-7 d-flex justify-content-center align-items-center'>
+            <ul className='cf d-flex justify-content-center'>
+              <li>
+                <a className='dropdown' href='#'>
+                  CLOTHINGS
+                </a>
+                <ul>
+                  <a href='#'>Indian</a>
+
+                  <a href='#'>Western</a>
+
+                  <a href='#'>Customized</a>
+                </ul>
+              </li>
+              <li>
+                <a className='dropdown' href='#'>
+                  WEDDING ESSENTIALS
+                </a>
+                <ul>
+                  <li>
+                    <a href='#'>Sub-menu Item 1</a>
+                  </li>
+                  <li>
+                    <a href='#'>Sub-menu Item 2</a>
+                  </li>
+                  <li>
+                    <a href='#'>Sub-menu Item 3</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a className='dropdown' href='#'>
+                  ACCESSORIES
+                </a>
+                <ul>
+                  <li>
+                    <a href='#'>Sub-menu Item 1</a>
+                  </li>
+                  <li>
+                    <a href='#'>Sub-menu Item 2</a>
+                  </li>
+                  <li>
+                    <a href='#'>Sub-menu Item 3</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href='#' className='dropdown'>
+                  OUR STORY
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className='col-md-2 d-flex justify-content-end align-items-center'>
+            <div
+              className='controls d-flex justify-content-center align-items-center '
+              style={{ paddingRight: 10 }}
+            >
+              <SearchOutlined
+                style={{ fontSize: 20, padding: 10, cursor: 'pointer' }}
+              />
+              <div style={{ backgroundColor: '#f2dade', borderRadius: 25 }}>
+                <ShoppingCartOutlined
+                  style={{
+                    fontSize: 21,
+                    paddingLeft: 15,
+                    paddingRight: 15,
+                    cursor: 'pointer',
+                    paddingTop: 15,
+                    paddingBottom: 15
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </nav>
+        <nav className='mob-header d-flex align-items-center justify-content-between py-3'>
+          <div className=''>
+            <Image src={profilePic} width={120} height={60} />
+          </div>
+          <div className='col-md-7 d-flex align-items-center'>
+            <div>
+              <SearchOutlined
+                style={{ fontSize: 22, padding: 10, cursor: 'pointer' }}
+              />
+            </div>
+
+            <div>
+              <MenuOutlined
+                style={{ fontSize: 22, padding: 10, cursor: 'pointer' }}
+                onClick={showDrawer}
+              />
+            </div>
+            <div >
+              <ShoppingCartOutlined
+                 style={{ fontSize: 22, padding: 10, cursor: 'pointer' }}
+              />
+            </div>
+          </div>
+        </nav>
+      </div>
+      <Drawer
+      closeIcon={null}
+      destroyOnClose={true}
+        // closable={false}
+        placement='right'
+        onClose={onClose}
+        open={open}
+        width={270}
+        style={{backgroundColor:"#f2dade",padding:0}}
+        footer={<DrawerFooter />}
+        extra={
+          <Space>
+            <CloseOutlined onClick={onClose}/>
+          </Space>
+        }
+      >
+        <MenuComponent />
+
+
+        <div style={{padding:25,display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
+          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Our Story</a>
+          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Bestsellers</a>
+          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Terms and Conditions</a>
+          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Privacy Policy</a>
+          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Contact Us</a>
+          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Login</a>
+        </div>
+
+       <div className="container">
+       <div className="row d-flex justify-content-center align-items-center">
+          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{color:"#7c2325",fontSize:30}}/></div>
+          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{color:"#7c2325",fontSize:30}}/></div>
+          {/* <div className="col-6 p-2" >Pintrest</div> */}
+          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{color:"#7c2325",fontSize:30}}/></div>
+          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><YoutubeFilled style={{color:"#7c2325",fontSize:35}}/></div>
+        </div>
+       </div>
+      </Drawer>
+    </>
+  )
+}
