@@ -192,12 +192,59 @@ nav li ul a:hover {
 	transform: scale(.95);
 	
 }
+.promo{
+	background-color: var(--bg);
+	text-align: center;
+	padding: 8px 10px;
+}
+.promo span{
+	color: #000;
+	font-size: 12px;
+}
+.promo span strong{
+	color: var(--primary);
+}
+.cat:hover .main-text{
+	opacity: 1;
+	padding: 10px 30px;
+	transform: translate(-70px,0px);
+}
+.main-text{
+	transition: .5s;
+	opacity: 0.8;
+	border-radius: 5px;
+	background-color: var(--primary);
+	padding: 10px 20px;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-60px,0px);
+}
+.main-text:hover{
+	background-color: var(--bg);
+	color: var(--primary);
+	cursor: pointer;
+}
 @media only screen and (max-width: 1240px) {
 	.pc-header{
 		display: none;
 	}
 	.mob-header{
 		display: flex !important;
+	}
+	.main-text{
+		transition: .5s;
+		opacity: 0.8;
+		border-radius: 5px;
+		background-color: var(--primary);
+		padding: 5px 10px;
+		color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-45px,-10px);
+		font-size: 14px;
 	}
 }
 
