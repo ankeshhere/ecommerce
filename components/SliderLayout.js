@@ -36,21 +36,21 @@ const SliderLayout = () => {
     return (
         <Carousel autoplay>
             <div style={contentStyle}>
-                <Image src={windowSize > 400 ? pic1 : pic1_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} />
+                <Image src={windowSize > 400 ? pic1 : pic1_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} quality="100"/>
 
             </div>
             <div style={contentStyle}>
-                <Image src={windowSize > 400 ? pic2 : pic2_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} />
+                <Image src={windowSize > 400 ? pic2 : pic2_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} quality="100"/>
 
             </div>
             <div style={contentStyle}>
-                <Image src={windowSize > 400 ? pic3 : pic3_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} />
+                <Image src={windowSize > 400 ? pic3 : pic3_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} quality="100"/>
             </div>
             <div style={contentStyle}>
-                <Image src={windowSize > 400 ? pic4 : pic4_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} />
+                <Image src={windowSize > 400 ? pic4 : pic4_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} quality="100"/>
             </div>
             <div style={contentStyle}>
-                <Image src={windowSize > 400 ? pic5 : pic5_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} />
+                <Image src={windowSize > 400 ? pic5 : pic5_m} width={windowSize} height={windowSize > 400 ? 650 : windowSize} quality="100"/>
             </div>
         </Carousel>
     );
