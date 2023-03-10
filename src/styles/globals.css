@@ -8,7 +8,8 @@
 	src: url('../../public/fonts/hatton.otf');
 	font-weight: normal;
 	font-style: normal;
-  }
+}
+
 * {
 	outline: none;
 	padding: 0;
@@ -47,7 +48,7 @@ nav li {
 	margin: 0;
 	padding: 0;
 	position: relative;
-	
+
 }
 
 nav a {
@@ -66,31 +67,33 @@ nav a {
 	transition: all .25s ease;
 }
 
-nav .dropdown {
-	/* background:url('../images/arrow.jpg') no-repeat right center; */
-}
-nav .dropdown:after{
+
+
+nav .dropdown:after {
 	content: '';
 	position: absolute;
-	width: 0; height: 2px;
+	width: 0;
+	height: 2px;
 	display: block;
 	margin-top: 5px;
 	right: 0;
 	background: var(--primary);
 	transition: width .2s ease;
 	-webkit-transition: width .2s ease;
-  }
- 
-nav .dropdown:hover:after  {
+}
+
+nav .dropdown:hover:after {
 	/* background: #01abf8; */
 	/* color:var(--primary) !important; */
 	width: 100%;
 	left: 0;
 	background: var(--primary);
 }
-.dropdown:hover{
-	color:var(--primary);
+
+.dropdown:hover {
+	color: var(--primary);
 }
+
 nav li ul {
 	background-color: #fff;
 	/* float: left; */
@@ -119,6 +122,7 @@ nav li ul li {
 	float: none;
 	width: 100%;
 }
+
 nav li ul a {
 	font-weight: 500;
 	-webkit-transition: all .25s ease;
@@ -127,10 +131,11 @@ nav li ul a {
 	-o-transition: all .25s ease;
 	transition: all .25s ease;
 }
+
 nav li ul a:hover {
 	color: var(--primary);
 	font-weight: bold;
-	
+
 	/* background: #bbb; */
 }
 
@@ -144,74 +149,91 @@ nav li ul a:hover {
 .cf:after {
 	clear: both;
 }
-.mob-header{
+
+.mob-header {
 	display: none !important;
 }
-.heading{
-	font-family: 'Hatton',serif;
+
+.heading {
+	font-family: 'Hatton', serif;
 	text-align: center;
 	font-size: 1.8rem;
 	padding-top: 60px;
 	color: var(--primary);
 }
-.sub-text{
+
+.sub-text {
 	text-align: center;
 	font-size: .9rem;
 	font-weight: bold;
 }
-.divider{
+
+.divider {
 	height: 3px;
 	background-color: var(--primary);
 }
-.ct{
+
+.ct {
 	text-align: center;
 	font-size: .7rem;
 	font-weight: bold;
 	padding: 10px 0px;
 }
-.price{
+
+.price {
 	text-align: center;
 	font-size: .8rem;
 	/* font-weight: bold; */
 	letter-spacing: 3px;
 }
-.card-l{
+
+.card-l {
 	text-decoration: none;
 	cursor: pointer;
 }
-.card-l:hover .card-l{
+
+.card-l:hover .card-l {
 	background-color: var(--bg) !important;
 }
-.card-l:hover .ct{
+
+.card-l:hover .ct {
 	color: var(--primary) !important;
 }
-.imx{
+
+.imx {
 	transition: transform .2s;
 }
-.card-l:hover .imx{
+
+.card-l:hover .imx {
 	transform: scale(.95);
-	
+
 }
-.promo{
+
+.promo {
 	background-color: var(--bg);
 	text-align: center;
 	padding: 8px 10px;
 }
-.promo span{
+
+.promo span {
 	color: #000;
 	font-size: 12px;
 }
-.promo span strong{
+
+.promo span strong {
 	color: var(--primary);
 }
-.cat:hover .main-text{
+
+.cat:hover .main-text {
 	opacity: 1;
 	padding: 10px 30px;
-	transform: translate(-70px,0px);
+	transform: translate(-70px, 0px);
 }
-.main-text{
+
+.main-text {
 	transition: .5s;
 	opacity: 0.8;
+	font-size: 14px;
 	border-radius: 5px;
 	background-color: var(--primary);
 	padding: 10px 20px;
@@ -219,84 +241,100 @@ nav li ul a:hover {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-60px,0px);
+	transform: translate(-60px, 0px);
 }
-.main-text:hover{
+
+.main-text:hover {
 	background-color: var(--bg);
 	color: var(--primary);
 	cursor: pointer;
 }
-.footer{
+
+.footer {
 	padding: 30px;
 	margin-top: 20px;
 	background-color: var(--primary);
 }
-.footer h4{
+
+.footer h4 {
 	color: var(--bg);
 	font-size: 12px;
 	font-weight: bold;
 }
-.footer-holder{
+
+.footer-holder {
 	display: flex;
 	flex-direction: column;
-	
+
 }
-.footer-holder a{
+
+.footer-holder a {
 	text-decoration: none;
 	color: var(--bg);
 	font-size: 13px;
 	/* transition: .5s; */
 }
-.footer-holder a:hover{
+
+.footer-holder a:hover {
 	color: #fff;
 }
+
 .footer-content {
-	color:var(--bg);
+	color: var(--bg);
 	font-size: 13px;
 	margin-top: 30px;
 }
-.footer-c{
+
+.footer-c {
 	color: var(--bg);
 	text-align: center;
 }
-.bcrumb a{
+
+.bcrumb a {
 	text-decoration: none;
 	color: var(--primary);
 
 }
-.showcase{
+
+.showcase {
 	margin-top: 40px;
 	border: 1px solid #000;
 	border-radius: 5px;
 	font-size: 15px;
 }
-.bcrum{
+
+.bcrum {
 	font-size: 11px;
 	letter-spacing: 2px;
 	font-weight: bold;
 }
-.pcont h4{
+
+.pcont h4 {
 	padding: 0px;
 	margin-top: 10px;
 	font-weight: bold;
 }
-.pcont p{
+
+.pcont p {
 	margin-top: 10px;
 	font-size: 13px;
 	letter-spacing: 3px;
 	margin-bottom: 0px;
 }
-.spa{
+
+.spa {
 	margin-top: 0px;
 	font-size: 11px;
 	font-weight: bold;
 }
-.cox{
+
+.cox {
 	opacity: .4;
-	margin:30px 0px;
+	margin: 30px 0px;
 	height: 1px;
 }
-.btn-order{
+
+.btn-order {
 	text-align: center;
 	padding: 10px;
 	color: var(--primary);
@@ -306,16 +344,19 @@ nav li ul a:hover {
 	border: 1px solid var(--primary);
 	transition: .4s;
 }
-.btn-order:hover{
+
+.btn-order:hover {
 	color: #fff;
 	background-color: var(--primary);
 }
-.desc{
+
+.desc {
 	padding-top: 20px !important;
 	letter-spacing: 0px !important;
 	font-size: 12px !important;
 }
-.coup{
+
+.coup {
 	font-size: 14px;
 	color: var(--primary);
 	margin-top: 30px;
@@ -324,28 +365,43 @@ nav li ul a:hover {
 	justify-content: space-between;
 	align-items: center;
 }
-.sz{
+
+.sz {
 	padding: 10px;
 	/* border: 1px solid var(--primary); */
 	/* margin: 1px; */
 	font-size: 12px;
 	font-weight: bold;
 }
-.cc{
-	
+
+.cc {
+
 	border: 3px solid var(--primary);
 }
+
 .thumbs {
 	padding-left: 0px !important;
 }
+.filt{
+	margin-left: 20px;
+}
+
 @media only screen and (max-width: 1240px) {
-	.pc-header{
+	.cat:hover .main-text {
+		opacity: 1;
+		padding: 10px 20px;
+		transform: none;
+	}
+
+	.pc-header {
 		display: none;
 	}
-	.mob-header{
+
+	.mob-header {
 		display: flex !important;
 	}
-	.main-text{
+
+	.main-text {
 		transition: .5s;
 		opacity: 0.8;
 		border-radius: 5px;
@@ -355,14 +411,24 @@ nav li ul a:hover {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-45px,-10px);
+		transform: translate(-45px, -10px);
 		font-size: 14px;
+	}
+
+	.cat:hover .main-text {
+		opacity: 1;
+		padding: 10px 25px;
+		transform: translate(-55px, -14px);
+	}
+	.filt{
+		margin-left: 0px;
 	}
 }
 
-.ant-drawer-body{
+.ant-drawer-body {
 	padding: 0px !important;
 }
+
 ul .ant-menu {
 	width: 100% !important;
 }

@@ -1,14 +1,33 @@
-import { SearchOutlined, MenuOutlined ,CloseOutlined,FacebookFilled,InstagramFilled,LinkedinFilled,YoutubeFilled} from '@ant-design/icons'
+import { SearchOutlined, MenuOutlined, CloseOutlined, FacebookFilled, InstagramFilled, LinkedinFilled, YoutubeFilled } from '@ant-design/icons'
 import { ShoppingCartOutlined } from '@ant-design/icons/lib/icons'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import profilePic from '../public/logo_f.jpg'
 import { Drawer, Space } from 'antd'
 import MenuComponent from './MenuComponent'
 import DrawerFooter from './DrawerFooter'
-export default function Navbar () {
+import { createClient } from 'contentful'
+import Link from 'next/link'
+export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [collNav, setColl] = useState([])
 
+  const client = createClient({
+    space: process.env.NEXT_PUBLIC_SPACE_ID || '',
+    accessToken: process.env.NEXT_PUBLIC_TOKEN_ID || ''
+  })
+  async function getCollections() {
+    const v = await client.getEntries({
+      content_type: 'collection',
+    })
+    setColl(v.items.reverse())
+
+  }
+  useEffect(() => {
+    console.log('render');
+    getCollections()
+  }, [])
+  // console.log('collNav ',collNav);
   const showDrawer = () => {
     setOpen(true)
   }
@@ -35,11 +54,22 @@ export default function Navbar () {
                   CLOTHINGS
                 </a>
                 <ul>
-                  <a href='#'>Indian</a>
+                  {
+
+                    collNav.length > 0 && collNav.map((i, idnex) => {
+
+                      if (i.fields.categoryName.fields.categoryName == "CLOTHING") {
+                        // console.log("II",i)
+                        return <Link key={idnex} href={`/collections/${i.fields.slug}`}>{i.fields.collectionName}</Link>
+                      }
+                      return null;
+                    })
+                  }
+                  {/* <a href='#'>Indian</a>
 
                   <a href='#'>Western</a>
 
-                  <a href='#'>Customized</a>
+                  <a href='#'>Customized</a> */}
                 </ul>
               </li>
               <li>
@@ -47,15 +77,18 @@ export default function Navbar () {
                   WEDDING ESSENTIALS
                 </a>
                 <ul>
-                  <li>
-                    <a href='#'>Sub-menu Item 1</a>
-                  </li>
-                  <li>
-                    <a href='#'>Sub-menu Item 2</a>
-                  </li>
-                  <li>
-                    <a href='#'>Sub-menu Item 3</a>
-                  </li>
+                  {
+
+                    collNav.length > 0 && collNav.map((i, idnex) => {
+
+                      if (i.fields.categoryName.fields.categoryName == "WEDDING ESSENTIALS") {
+                        // console.log("II",i)
+                        return <Link key={idnex} href={`/collections/${i.fields.slug}`}>{i.fields.collectionName}</Link>
+                      }
+                      return null;
+                    })
+                  }
+                
                 </ul>
               </li>
               <li>
@@ -63,15 +96,17 @@ export default function Navbar () {
                   ACCESSORIES
                 </a>
                 <ul>
-                  <li>
-                    <a href='#'>Sub-menu Item 1</a>
-                  </li>
-                  <li>
-                    <a href='#'>Sub-menu Item 2</a>
-                  </li>
-                  <li>
-                    <a href='#'>Sub-menu Item 3</a>
-                  </li>
+                  {
+
+                    collNav.length > 0 && collNav.map((i, idnex) => {
+
+                      if (i.fields.categoryName.fields.categoryName == "ACCESSORIES") {
+                        // console.log("II",i)
+                        return <Link key={idnex} href={`/collections/${i.fields.slug}`}>{i.fields.collectionName}</Link>
+                      }
+                      return null;
+                    })
+                  }
                 </ul>
               </li>
               <li>
@@ -123,49 +158,49 @@ export default function Navbar () {
             </div>
             <div >
               <ShoppingCartOutlined
-                 style={{ fontSize: 22, padding: 10, cursor: 'pointer' }}
+                style={{ fontSize: 22, padding: 10, cursor: 'pointer' }}
               />
             </div>
           </div>
         </nav>
       </div>
       <Drawer
-      closeIcon={null}
-      destroyOnClose={true}
+        closeIcon={null}
+        destroyOnClose={true}
         // closable={false}
         placement='right'
         onClose={onClose}
         open={open}
         width={270}
-        style={{backgroundColor:"#f2dade",padding:0}}
+        style={{ backgroundColor: "#f2dade", padding: 0 }}
         footer={<DrawerFooter />}
         extra={
           <Space>
-            <CloseOutlined onClick={onClose}/>
+            <CloseOutlined onClick={onClose} />
           </Space>
         }
       >
         <MenuComponent />
 
 
-        <div style={{padding:25,display:'flex',flexWrap:'wrap',justifyContent:'space-between'}}>
-          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Our Story</a>
-          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Bestsellers</a>
-          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Terms and Conditions</a>
-          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Privacy Policy</a>
-          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Contact Us</a>
-          <a href='' style={{color:"#7c2325",textDecoration:'none',padding:5}}>Login</a>
+        <div style={{ padding: 25, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Our Story</a>
+          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Bestsellers</a>
+          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Terms and Conditions</a>
+          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Privacy Policy</a>
+          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Contact Us</a>
+          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Login</a>
         </div>
 
-       <div className="container">
-       <div className="row d-flex justify-content-center align-items-center">
-          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{color:"#7c2325",fontSize:30}}/></div>
-          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{color:"#7c2325",fontSize:30}}/></div>
-          {/* <div className="col-6 p-2" >Pintrest</div> */}
-          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{color:"#7c2325",fontSize:30}}/></div>
-          <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><YoutubeFilled style={{color:"#7c2325",fontSize:35}}/></div>
+        <div className="container">
+          <div className="row d-flex justify-content-center align-items-center">
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{ color: "#7c2325", fontSize: 30 }} /></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{ color: "#7c2325", fontSize: 30 }} /></div>
+            {/* <div className="col-6 p-2" >Pintrest</div> */}
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{ color: "#7c2325", fontSize: 30 }} /></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><YoutubeFilled style={{ color: "#7c2325", fontSize: 35 }} /></div>
+          </div>
         </div>
-       </div>
       </Drawer>
     </>
   )
