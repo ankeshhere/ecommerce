@@ -1,15 +1,15 @@
 import { Carousel } from 'antd';
 import Image from 'next/image';
 import pic1 from "../public/1.png"
-import pic2 from "../public/2.jpg"
-import pic3 from "../public/3.jpg"
-import pic4 from "../public/4.jpg"
-import pic5 from "../public/5.jpg"
-import pic1_m from "../public/1-m.jpg"
-import pic2_m from "../public/2-m.jpg"
-import pic3_m from "../public/3-m.jpg"
-import pic4_m from "../public/4-m.jpg"
-import pic5_m from "../public/5-m.jpg"
+import pic2 from "../public/2.png"
+import pic3 from "../public/3.png"
+import pic4 from "../public/4.png"
+import pic5 from "../public/5.png"
+import pic1_m from "../public/1-m.png"
+import pic2_m from "../public/2-m.png"
+import pic3_m from "../public/3-m.png"
+import pic4_m from "../public/4-m.png"
+import pic5_m from "../public/5-m.png"
 import { useEffect, useRef, useState } from 'react';
 const contentStyle = {
     margin: 0,
