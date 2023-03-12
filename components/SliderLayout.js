@@ -1,7 +1,7 @@
 import { Carousel } from 'antd';
 import Image from 'next/image';
 import pic1 from "../public/1.png"
-import pic2 from "../public/2.jpg"
+import pic2 from "../public/2.png"
 import pic3 from "../public/3.png"
 import pic4 from "../public/4.png"
 import pic5 from "../public/5.png"
