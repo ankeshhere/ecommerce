@@ -18,28 +18,29 @@ export async function getServerSideProps(context) {
     accessToken: process.env.TOKEN_ID || ''
   })
   // let vid = capitalizeFirstLetter(context.params.id).replaceAll('-', ' ')
-  // const v = await client.getEntries({
-  //   content_type: 'location',
-  //   'fields.locationName': vid
-  // })
+  const p = await client.getEntries({
+    content_type: 'product',
+    // 'fields.locationName': vid
+  })
+
   const v = await client.getEntries({ content_type: 'collection' })
-  
+
   // console.log('res ', v.items)
   return {
-    props: { collection: v.items },
+    props: { collection: v.items, prods: p.items.slice(0, 5) },
   }
 }
 // export async function getStaticProps () {
 // }
 
-export default function Home({collection}) {
-  
+export default function Home({ collection,prods }) {
+
   return (
     <>
-     
+
       <SliderLayout />
-      {/* <NewArrivals /> */}
-      <ShopByCategory collection={collection}/>
+      <NewArrivals prods={prods}/>
+      <ShopByCategory collection={collection} />
     </>
   )
 }
