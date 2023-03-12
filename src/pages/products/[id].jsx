@@ -60,6 +60,9 @@ export default function Collection({ proddata }) {
                 <StarFilled style={{color:"#7c2325",paddingRight:4}}/>
                 <StarFilled style={{color:"#7c2325",paddingRight:4}}/> */}
               </div>
+              {
+                proddata.inStock ? <p>Rs. {proddata.price}</p> : <p style={{ textDecoration: 'line-through' }}>Rs. {proddata.price} OUT OF STOCK</p>
+              }
               <p>Rs. {proddata.price}</p>
               <span className='spa'>Inclusive of all taxes.</span>
               <div className='divider cox'></div>
