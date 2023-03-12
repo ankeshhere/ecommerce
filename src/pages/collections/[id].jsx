@@ -1,11 +1,11 @@
 import { createClient } from 'contentful'
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: 'blocking' // can also be true or 'blocking'
-  }
-}
-export async function getStaticProps(context) {
+// export async function getStaticPaths() {
+//   return {
+//     paths: [],
+//     fallback: 'blocking' // can also be true or 'blocking'
+//   }
+// }
+export async function getServerSideProps(context) {
   // console.log('ID ', context.params.id)
   const client = createClient({
     space: process.env.SPACE_ID || '',
@@ -16,8 +16,16 @@ export async function getStaticProps(context) {
     content_type: 'collection',
     'fields.slug': context.params.id
   })
+  const prods = await client.getEntries({
+    content_type: 'product',
+  })
+
+  const fff = prods.items.filter((item) => {
+    // console.log('ii', item.fields.collection[0].fields.slug)
+    return item.fields.collection[0].fields.slug == context.params.id
+  })
   return {
-    props: { collection: v.items }
+    props: { collection: v.items, products: fff }
   }
 }
 
@@ -25,7 +33,8 @@ import React, { useEffect, useState } from 'react'
 import Product from 'components/Product'
 import { Select, Space } from 'antd'
 import { FilterFilled } from '@ant-design/icons'
-export default function Collection({ collection }) {
+export default function Collection({ collection, products }) {
+  console.log("PPP", products);
   var collectionData = collection[0]
   const [windowsize, setwindowsize] = useState(0)
   useEffect(() => {
@@ -34,6 +43,8 @@ export default function Collection({ collection }) {
   const handleChange = value => {
     console.log(`selected ${value}`)
   }
+
+
   return (
     <>
       {' '}
@@ -142,10 +153,12 @@ export default function Collection({ collection }) {
       </div>
       <div className='container'>
         <div className='row'>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {
+            products.length > 0 &&
+            products.map((item,idx) => {
+              return (<Product item={item} key={idx}/>)
+            })
+          }
         </div>
       </div>
     </>

@@ -21,7 +21,6 @@ export default function Navbar() {
       content_type: 'collection',
     })
     setColl(v.items.reverse())
-
   }
   useEffect(() => {
     console.log('render');

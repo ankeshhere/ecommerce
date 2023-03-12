@@ -38,7 +38,7 @@ export default function Home({collection}) {
     <>
      
       <SliderLayout />
-      <NewArrivals />
+      {/* <NewArrivals /> */}
       <ShopByCategory collection={collection}/>
     </>
   )

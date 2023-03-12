@@ -1,22 +1,23 @@
-export async function getStaticPaths () {
-  return {
-    paths: [],
-    fallback: 'blocking' // can also be true or 'blocking'
-  }
-}
-export async function getStaticProps (context) {
+import { createClient } from 'contentful'
+// export async function getStaticPaths () {
+//   return {
+//     paths: [],
+//     fallback: 'blocking' 
+//   }
+// }
+export async function getServerSideProps (context) {
   console.log('ID ', context.params.id)
-  //   const client = createClient({
-  //     space: process.env.SPACE_ID || '',
-  //     accessToken: process.env.TOKEN_ID || ''
-  //   })
+    const client = createClient({
+      space: process.env.SPACE_ID || '',
+      accessToken: process.env.TOKEN_ID || ''
+    })
   //   let vid = capitalizeFirstLetter(context.params.id).replaceAll('-', ' ')
-  //   const v = await client.getEntries({
-  //     content_type: 'category',
-  //     'fields.categoryTitle': vid
-  //   })
+    const v = await client.getEntries({
+      content_type: 'product',
+      'fields.slug': context.params.id
+    })
   return {
-    props: { id: context.params.id }
+    props: { proddata: v.items  }
   }
 }
 import { StarFilled, WhatsAppOutlined } from '@ant-design/icons'
@@ -26,7 +27,7 @@ import Product from 'components/Product'
 import SectionHeading from 'components/SectionHeading'
 import React, { useEffect, useState } from 'react'
 
-export default function Collection ({ id }) {
+export default function Collection ({ proddata }) {
   const [windowsize, setwindowsize] = useState(0)
   useEffect(() => {
     setwindowsize(window.innerWidth)
@@ -34,6 +35,7 @@ export default function Collection ({ id }) {
   const handleChange = value => {
     console.log(`selected ${value}`)
   }
+  console.log("PD",proddata);
   return (
     <>
       <div style={{ marginTop: 30 }}>
@@ -94,7 +96,7 @@ export default function Collection ({ id }) {
         </div>
       </div>
 
-      <section>
+      {/* <section>
         <SectionHeading title={'Recommened for this category'} />
         <div className='container'>
           <div className='row'>
@@ -104,7 +106,7 @@ export default function Collection ({ id }) {
             <Product />
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }
