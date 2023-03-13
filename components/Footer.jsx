@@ -1,4 +1,5 @@
 import { FacebookFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Footer () {
@@ -27,10 +28,10 @@ export default function Footer () {
             <h4>POLICIES</h4>
             <div className='footer-holder'>
               <a href=''>FAQs</a>
-              <a href=''>Initiate Return/ Exchange</a>
-              <a href=''>Return Policy</a>
+              <Link href='/return-exchange-policy'>Initiate Return/ Exchange</Link>
+              {/* <a href=''>Return Policy</a> */}
               <a href=''>Terms of Service</a>
-              <a href=''>Shipping Policy</a>
+              <Link href='/shipping-policy'>Shipping Policy</Link>
               <a href=''>Privacy Policy</a>
             </div>
           </div>

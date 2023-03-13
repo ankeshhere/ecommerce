@@ -17,7 +17,7 @@ export async function getServerSideProps(context) {
     'fields.slug': context.params.id
   })
   return {
-    props: { proddata: v.items[0].fields }
+    props: { proddata: v.items[0].fields,slug:context.params.id }
   }
 }
 import { StarFilled, WhatsAppOutlined } from '@ant-design/icons'
@@ -26,11 +26,14 @@ import ImageCarousel from 'components/ImageCarousel'
 import Product from 'components/Product'
 import SectionHeading from 'components/SectionHeading'
 import React, { useEffect, useState } from 'react'
+import Link from 'next/link'
 
-export default function Collection({ proddata }) {
+export default function Collection({ proddata,slug }) {
   const [windowsize, setwindowsize] = useState(0)
+  const [baseurl, setbaseurl] = useState("")
   useEffect(() => {
     setwindowsize(window.innerWidth)
+    setbaseurl(window.location.origin)
   })
   const handleChange = value => {
     console.log(`selected ${value}`)
@@ -63,10 +66,10 @@ export default function Collection({ proddata }) {
               <span className='spa'>Inclusive of all taxes.</span>
               <div className='divider cox'></div>
 
-              <a href='#' className='btn-order'>
+              <Link href={`https://wa.me/919667656804?text=I'm%20interested%20in%20your%20product%20${baseurl}/products/${slug}`} className='btn-order'>
                 <WhatsAppOutlined style={{ marginRight: 10 }} /> Enquire on
                 Whatsapp
-              </a>
+              </Link>
               {
                 proddata.discount_prc && Object.keys(proddata.discount_prc).length > 0 && <div className='coup'>
                   <span>Flat {proddata.discount_prc.perc} off</span>
