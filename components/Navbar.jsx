@@ -39,12 +39,13 @@ export default function Navbar() {
       <div className='header px-3'>
         <nav className='row pc-header'>
           <div className='col-md-3'>
-            <Image
+            <Link href={'/'}><Image
               src={profilePic}
               alt='Picture of the author'
               width={250}
               height={90}
-            />
+            /></Link>
+
           </div>
           <div className='col-md-7 d-flex justify-content-center align-items-center'>
             <ul className='cf d-flex justify-content-center'>
@@ -87,7 +88,7 @@ export default function Navbar() {
                       return null;
                     })
                   }
-                
+
                 </ul>
               </li>
               <li>

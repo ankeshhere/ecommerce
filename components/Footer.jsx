@@ -16,13 +16,11 @@ export default function Footer () {
             </div>
           </div>
           <div className='col-md-4 my-4'>
-            <h4>SHUBVASTRAM LIFESTYLE</h4>
+            <h4>SHUBVASTRAM</h4>
             <div className='footer-holder'>
-              <a href=''>12, River Colony, Opp. St. Xaviers College, Navrangpura, Ahmedabad 380009.</a><br></br>
-              <a href=''>Studio is open between Monday to Saturday : 10:30 AM till 6:30 PM</a><br></br>
-              <a href=''>Only for Studio Enquiries +91 7016416328</a><br></br>
-              <a href=''>Reach out to us on +91 9879779883 or care@maishalifestyle.com</a>
-              <a href=''>Monday to Saturday between 10:30 AM till 5:30 PM</a>
+              <a href=''>Air Base Colony, Ramnagar, Kadma, Jamshedpur, Jharkhand 831005.</a><br></br>
+              <a href=''>Reach out to us on :- +919667656804 or shubhvastram.official@gmail.com</a>
+              <a href=''>Monday to Saturday :- 10:00 AM to 7:00 PM</a>
             </div>
           </div>
           <div className='col-md-3 my-4'>

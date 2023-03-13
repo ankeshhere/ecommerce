@@ -54,12 +54,12 @@ export default function Collection({ proddata }) {
               <h4>{proddata.name}</h4>
               <div className='star'>
                 <Rate disabled defaultValue={5} />
-              
+
               </div>
               {
-                proddata.inStock ? <p>Rs. {proddata.price}</p> : <p style={{ textDecoration: 'line-through' }}>Rs. {proddata.price} OUT OF STOCK</p>
+                proddata.inStock == true ? <p>Rs. {proddata.price}</p> : <><p style={{ textDecoration: 'line-through' }}>Rs. {proddata.price} </p><p>OUT OF STOCK</p></>
               }
-              <p>Rs. {proddata.price}</p>
+              {/* <p>Rs. {proddata.price}</p> */}
               <span className='spa'>Inclusive of all taxes.</span>
               <div className='divider cox'></div>
 

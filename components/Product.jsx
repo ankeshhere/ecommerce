@@ -19,7 +19,10 @@ export default function Product({ item }) {
                         <span className='ct'>
                             {item.fields.name}
                         </span>
-                        <p className='price'>Rs. {item.fields.price}</p>
+                        {/* <p className='price'>Rs. {item.fields.price}</p> */}
+                        {
+                            item.fields.inStock == true ? <p className='price'>Rs. {item.fields.price}</p> : <><p  className='price' style={{ textDecoration: 'line-through' }}>Rs. {item.fields.price} </p><p style={{fontSize:11,fontWeight:'bold',color:"#5a5a5a"}}>OUT OF STOCK</p></>
+                        }
                     </div>
                 </div>
             </Link>

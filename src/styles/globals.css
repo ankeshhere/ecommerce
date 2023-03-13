@@ -135,7 +135,7 @@ nav li ul a {
 nav li ul a:hover {
 	color: var(--primary);
 	font-weight: bold;
-
+	font-size: 12px;
 	/* background: #bbb; */
 }
 
