@@ -295,6 +295,12 @@ nav li ul a:hover {
 	color: var(--primary);
 
 }
+.subc{
+	font-family: 'Hatton', serif;
+	text-decoration: none;
+	color: var(--primary);
+	margin-bottom: 20px;
+}
 
 .showcase {
 	margin-top: 40px;

@@ -24,8 +24,14 @@ export async function getServerSideProps(context) {
     // console.log('ii', item.fields.collection[0].fields.slug)
     return item.fields.collection[0].fields.slug == context.params.id
   })
+  // console.log('FFF' ,fff);
+  const subc = new Set();
+  fff.forEach((item, index) => {
+    if (item.fields.hasOwnProperty('subCollection'))
+      subc.add(item.fields.subCollection.fields.subCollectionTitle)
+  })
   return {
-    props: { collection: v.items, products: fff }
+    props: { collection: v.items, products: fff, subc: [...subc] }
   }
 }
 
@@ -33,29 +39,39 @@ import React, { useEffect, useState } from 'react'
 import Product from 'components/Product'
 import { Select, Space } from 'antd'
 import { FilterFilled } from '@ant-design/icons'
-export default function Collection({ collection, products }) {
+import Link from 'next/link'
+export default function Collection({ collection, products, subc }) {
   console.log("PPP", products);
+  console.log("subc", subc);
   var collectionData = collection[0]
   const [windowsize, setwindowsize] = useState(0)
-  useEffect(() => {
-    setwindowsize(window.innerWidth)
-  })
-  const handleChange = value => {
-    console.log(`selected ${value}`)
-  }
+  const [subcollections, setsubcollections] = useState([])
+  const letters = new Set();
 
+  // useEffect(() => {
 
+  //   setc()
+  // }, [])
+
+  // function setc() {
+
+  //   products.map((item, index) => {
+  //     if (item.fields.hasOwnProperty('subCollection'))
+  //       letters.add(item.fields.subCollection.fields.subCollectionTitle)
+  //   })
+  //   // setsubcollections(letters)
+  // }
   return (
     <>
       {' '}
       <div className='container bcrumb d-flex flex-column align-items-center justify-content-center mt-3'>
-        <a href='' style={{ fontSize: 13 }}>Home /</a>
-        <a
+        <Link href='/' style={{ fontSize: 13 }}>Home /</Link>
+        <Link
           href=''
           style={{ fontWeight: 'bold', fontSize: 30, textAlign: 'center' }}
         >
           {collectionData.fields.collectionName}
-        </a>
+        </Link>
       </div>
       <div style={{ padding: 10 }}>
         <div
@@ -86,68 +102,27 @@ export default function Collection({ collection, products }) {
       <div style={{ padding: 10 }}>
         <div className='container'>
           <div className='row px-0 d-flex justify-conten-between'>
-            <div className='col-md-3 px-0'>
-              <Select
-                style={{
-                  width: '100%',
-                  border: '1px solid black',
-                  marginBottom: 20
-                }}
-                defaultValue='Sort'
-                width={'100%'}
-                onChange={handleChange}
-                suffixIcon={<FilterFilled style={{ color: "#000" }} />}
-                options={[
+            {
+              subc.length > 0 && subc.map((item, index) => {
+                return <div key={index}>
+                  <h4
+                    className='subc'
+                    style={{ fontWeight: 'bold', fontSize: 14, textAlign: 'center' }}
+                  >
+                    {item}
+                  </h4>
                   {
-                    value: 'Alpha-a-z',
-                    label: 'Alphabetical A-Z'
-                  },
-                  {
-                    value: 'Alpha-z-a',
-                    label: 'Alphabetical Z-A'
-                  },
-                  {
-                    value: 'Price-high-low',
-                    label: 'Price - High to Llow'
-                  },
-                  {
-                    value: 'Price-low-high',
-                    label: 'Price - Low to High'
+                    products.map((i, idx) => {
+                      const n = Math.floor(Math.random() * 100)
+                      if (i.fields.hasOwnProperty('subCollection') && i.fields.subCollection.fields.subCollectionTitle == item) {
+                        return <Product item={i} key={n} />
+                      }
+                    })
                   }
-                ]}
-              />
-            </div>
-            <div className='col-md-3 px-0 filt'>
-              <Select
-                style={{
-                  width: '100%',
-                  border: '1px solid black',
-                  marginBottom: 20
-                }}
-                defaultValue='Filter'
-                width={'100%'}
-                onChange={handleChange}
-                suffixIcon={<FilterFilled style={{ color: "#000" }} />}
-                options={[
-                  {
-                    value: 'Alpha-a-z',
-                    label: 'Alphabetical A-Z'
-                  },
-                  {
-                    value: 'Alpha-z-a',
-                    label: 'Alphabetical Z-A'
-                  },
-                  {
-                    value: 'Price-high-low',
-                    label: 'Price - High to Llow'
-                  },
-                  {
-                    value: 'Price-low-high',
-                    label: 'Price - Low to High'
-                  }
-                ]}
-              />
-            </div>
+                </div>
+              })
+            }
+
           </div>
         </div>
       </div>
@@ -155,8 +130,10 @@ export default function Collection({ collection, products }) {
         <div className='row'>
           {
             products.length > 0 &&
-            products.map((item,idx) => {
-              return (<Product item={item} key={idx}/>)
+            products.map((item, idx) => {
+              if (!item.fields.hasOwnProperty('subCollection')) {
+                return <Product item={item} key={idx} />
+              }
             })
           }
         </div>
