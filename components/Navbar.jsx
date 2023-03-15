@@ -8,9 +8,11 @@ import MenuComponent from './MenuComponent'
 import DrawerFooter from './DrawerFooter'
 import { createClient } from 'contentful'
 import Link from 'next/link'
+import Promo from './Promo'
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [collNav, setColl] = useState([])
+  // const [oromo, setpromo] = useState()
 
   const client = createClient({
     space: process.env.NEXT_PUBLIC_SPACE_ID || '',
@@ -22,9 +24,12 @@ export default function Navbar() {
     })
     setColl(v.items.reverse())
   }
+  
+
   useEffect(() => {
     // console.log('render');
     getCollections()
+   
   }, [])
   // console.log('collNav ',collNav);
   const showDrawer = () => {
@@ -181,7 +186,7 @@ export default function Navbar() {
           </Space>
         }
       >
-        <MenuComponent collNav={collNav} onClose={onClose}/>
+        <MenuComponent collNav={collNav} onClose={onClose} />
 
 
         <div style={{ padding: 25, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
@@ -197,13 +202,14 @@ export default function Navbar() {
 
         <div className="container">
           <div className="row d-flex justify-content-center align-items-center">
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={()=>router.push('https://www.facebook.com/shubhvastram.official')}/></div>
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={()=>router.push('https://www.facebook.com/shubhvastram.official')}/></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={() => router.push('https://www.facebook.com/shubhvastram.official')} /></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={() => router.push('https://www.facebook.com/shubhvastram.official')} /></div>
             {/* <div className="col-6 p-2" >Pintrest</div> */}
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={()=>router.push('https://www.linkedin.com/company/shubhvastram/')}/></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={() => router.push('https://www.linkedin.com/company/shubhvastram/')} /></div>
           </div>
         </div>
       </Drawer>
+      <Promo />
     </>
   )
 }

@@ -13,9 +13,9 @@ export default function Footer () {
             <h4>MAIN MENU</h4>
             <div className='footer-holder'>
               <Link href='/about-us'>About Us</Link>
-              <a href=''>BestSellers</a>
-              <a href=''>New Arrivals</a>
-              <a href=''>Discounts / Coupons </a>
+              {/* <a href='/'>BestSellers</a> */}
+              <Link href='/#nv'>New Arrivals</Link>
+              {/* <a href=''>Discounts / Coupons </a> */}
             </div>
           </div>
           <div className='col-md-4 my-4'>
@@ -29,12 +29,12 @@ export default function Footer () {
           <div className='col-md-3 my-4'>
             <h4>POLICIES</h4>
             <div className='footer-holder'>
-              <a href=''>FAQs</a>
+              <Link href='/faqs'>FAQs</Link>
               <Link href='/return-exchange-policy'>Initiate Return/ Exchange</Link>
               {/* <a href=''>Return Policy</a> */}
               <a href='/terms-and-condition'>Terms of Service</a>
               <Link href='/shipping-policy'>Shipping Policy</Link>
-              <a href=''>Privacy Policy</a>
+              <Link href='/privacy-policy'>Privacy Policy</Link>
             </div>
           </div>
           <div className="col-md-2 pb-4 my-4">

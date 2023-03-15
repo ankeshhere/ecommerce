@@ -4,10 +4,10 @@ import SectionHeading from './SectionHeading'
 
 export default function NewArrivals({ prods }) {
   return (
-    <>
-      <div className='divider'></div>
-      <SectionHeading title="NEW ARRIVALS" descr="Shop with the latest trends for fashion" />
-      <div className='container'>
+    <div id='nv'>
+      <div className='divider' id='nv'></div>
+      <SectionHeading title="NEW ARRIVALS" descr="Shop with the latest trends for fashion" id='#nv'/>
+      <div className='container' id='nv'>
         <div className='row'>
           {
             prods.map((item, index) => {
@@ -21,6 +21,6 @@ export default function NewArrivals({ prods }) {
           <Product /> */}
         </div>
       </div>
-    </>
+    </div>
   )
 }
