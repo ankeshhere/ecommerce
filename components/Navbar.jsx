@@ -110,9 +110,9 @@ export default function Navbar() {
                 </ul>
               </li>
               <li>
-                <a href='#' className='dropdown'>
+                <Link href='/about-us' className='dropdown'>
                   OUR STORY
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

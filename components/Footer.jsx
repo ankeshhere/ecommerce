@@ -12,7 +12,7 @@ export default function Footer () {
           <div className='col-md-3 my-4'>
             <h4>MAIN MENU</h4>
             <div className='footer-holder'>
-              <a href=''>About Us</a>
+              <Link href='/about-us'>About Us</Link>
               <a href=''>BestSellers</a>
               <a href=''>New Arrivals</a>
               <a href=''>Discounts / Coupons </a>

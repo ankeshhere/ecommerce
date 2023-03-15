@@ -393,8 +393,36 @@ nav li ul a:hover {
 .filt{
 	margin-left: 20px;
 }
-
+.aboutc{
+	
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+	font-weight:bold;
+	text-align: left;
+}
+.i{
+	font-weight:bold;
+	background-image: url('../../public/about1.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 700px;
+}
+.i2{
+	font-weight:bold;
+	background-image: url('../../public/about2.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 300px;
+}
 @media only screen and (max-width: 1240px) {
+	.i{
+		background-image: url('../../public/ab1-m.png');
+		height: 300px;
+	}
+
 	.cat:hover .main-text {
 		opacity: 1;
 		padding: 10px 20px;
