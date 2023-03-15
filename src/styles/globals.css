@@ -379,7 +379,9 @@ nav li ul a:hover {
 	font-size: 12px;
 	font-weight: bold;
 }
-
+.lsp{
+	letter-spacing:0;
+}
 .cc {
 
 	border: 3px solid var(--primary);

@@ -30,7 +30,7 @@ export default function Footer () {
               <a href=''>FAQs</a>
               <Link href='/return-exchange-policy'>Initiate Return/ Exchange</Link>
               {/* <a href=''>Return Policy</a> */}
-              <a href=''>Terms of Service</a>
+              <a href='/terms-and-condition'>Terms of Service</a>
               <Link href='/shipping-policy'>Shipping Policy</Link>
               <a href=''>Privacy Policy</a>
             </div>

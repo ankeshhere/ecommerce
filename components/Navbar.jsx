@@ -165,6 +165,7 @@ export default function Navbar() {
         </nav>
       </div>
       <Drawer
+
         closeIcon={null}
         destroyOnClose={true}
         // closable={false}
@@ -180,16 +181,18 @@ export default function Navbar() {
           </Space>
         }
       >
-        <MenuComponent collNav={collNav}/>
+        <MenuComponent collNav={collNav} onClose={onClose}/>
 
 
         <div style={{ padding: 25, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Our Story</a>
-          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Bestsellers</a>
-          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Terms and Conditions</a>
-          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Privacy Policy</a>
-          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Contact Us</a>
-          <a href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Login</a>
+          <Link onClick={onClose} href='/about-us' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Our Story</Link>
+          {/* <Link href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Bestsellers</Link> */}
+          <Link onClick={onClose} href='/terms-and-condition' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Terms and Conditions</Link>
+          <Link onClick={onClose} href='/shipping-policy' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Shipping Policy</Link>
+          <Link onClick={onClose} href='/privacy-policy' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Privacy Policy</Link>
+          <Link onClick={onClose} href='/return-exchange-policy' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Return/Exchange Policy</Link>
+          {/* <Link href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Contact Us</Link> */}
+          {/* <Link href='' style={{ color: "#7c2325", textDecoration: 'none', padding: 5 }}>Login</Link> */}
         </div>
 
         <div className="container">
