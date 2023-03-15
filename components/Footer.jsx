@@ -1,8 +1,10 @@
 import { FacebookFilled, InstagramFilled, LinkedinFilled } from '@ant-design/icons'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
 export default function Footer () {
+  const router = useRouter()
   return (
     <section className='footer'>
       <div className='container'>
@@ -38,9 +40,9 @@ export default function Footer () {
           <div className="col-md-2 pb-4 my-4">
             <h4>SOCIAL</h4>
             <div>
-              <FacebookFilled size={22} style={{color:'#fff',fontSize:32,paddingRight:10,cursor:'pointer'}} />
-              <InstagramFilled size={22} style={{color:'#fff',fontSize:32, paddingRight:10,cursor:'pointer'}}/>
-              <LinkedinFilled size={22} style={{color:'#fff',fontSize:32, paddingRight:10,cursor:'pointer'}}/>
+              <FacebookFilled size={22} style={{color:'#fff',fontSize:32,paddingRight:10,cursor:'pointer'}} onClick={()=>router.push('https://www.facebook.com/shubhvastram.official')}/>
+              <InstagramFilled size={22} style={{color:'#fff',fontSize:32, paddingRight:10,cursor:'pointer'}} onClick={()=>router.push('https://instagram.com/shubhvastram.official?igshid=YmMyMTA2M2Y=')}/>
+              <LinkedinFilled size={22} style={{color:'#fff',fontSize:32, paddingRight:10,cursor:'pointer'}} onClick={()=>router.push('https://www.linkedin.com/company/shubhvastram/')}/>
             </div>
           </div>
         </div>

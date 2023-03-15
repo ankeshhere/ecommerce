@@ -197,11 +197,10 @@ export default function Navbar() {
 
         <div className="container">
           <div className="row d-flex justify-content-center align-items-center">
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{ color: "#7c2325", fontSize: 30 }} /></div>
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{ color: "#7c2325", fontSize: 30 }} /></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><FacebookFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={()=>router.push('https://www.facebook.com/shubhvastram.official')}/></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><InstagramFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={()=>router.push('https://www.facebook.com/shubhvastram.official')}/></div>
             {/* <div className="col-6 p-2" >Pintrest</div> */}
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{ color: "#7c2325", fontSize: 30 }} /></div>
-            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><YoutubeFilled style={{ color: "#7c2325", fontSize: 35 }} /></div>
+            <div className="col-6 p-2 d-flex justify-content-center align-items-center" ><LinkedinFilled style={{ color: "#7c2325", fontSize: 30 }} onClick={()=>router.push('https://www.linkedin.com/company/shubhvastram/')}/></div>
           </div>
         </div>
       </Drawer>
