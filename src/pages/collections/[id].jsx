@@ -107,7 +107,7 @@ export default function Collection({ collection, products, subc }) {
                 return <div key={index}>
                   <h4
                     className='subc'
-                    style={{ fontWeight: 'bold', fontSize: 14, textAlign: 'center' }}
+                    style={{ fontWeight: 'bold', fontSize: 18, textAlign: 'center' }}
                   >
                     {item}
                   </h4>
