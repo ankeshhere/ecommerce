@@ -180,7 +180,7 @@ export default function Navbar() {
           </Space>
         }
       >
-        <MenuComponent />
+        <MenuComponent collNav={collNav}/>
 
 
         <div style={{ padding: 25, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>

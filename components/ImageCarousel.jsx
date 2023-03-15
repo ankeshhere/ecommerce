@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 export default function ImageCarousel({ images }) {
     return (
         <div>
-            <Carousel autoPlay interval="2000" transitionTime="1000">
+            <Carousel autoPlay interval="2000" transitionTime="1000" preventMovementUntilSwipeScrollTolerance={true} swipeScrollTolerance={50}>
                 {
                     images.map((item, idx) => {
                         return <div key={idx}>

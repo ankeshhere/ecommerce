@@ -45,7 +45,7 @@ export default function Footer () {
           </div>
         </div>
       </div>
-      <p className='footer-content'>Shubvastram is a lifestyle accessory brand based in Ahmedabad, Gujarat, INDIA. We make, Handbags, Box Bags, Three-Pocket Jacquard Bags, Tote Bags, Sling Bags, Duffle Bags, Travel Bags, Two-Pocket Jacquard Bags, Cross Body Bags, Backpack, Wallets & Compact Wallets, Baguette Bags, Fearless and Bold Handbags, Pouches, Laptop Bags & Sleeves, Sunglasses Cases & Passport Covers, Clothing, and Footwear. You can also check out our exclusive collections like Go Social, Get-Set-Glam Belts, Diaries, and Tassels. Our products are handcrafted by local artisans from the finest weaves of cotton and jute. The products are designed keeping in mind the aesthetics and versatility that lie in cotton & jute and the fine woven textures we have inherited with. Many people also choose our products for gifts for Weddings, Anniversaries, Diwali, Holi, Christmas, New Year, Karwa Chauth, Valentine's Day, and Women's Day. We use minimal vegan leather instead of animal leather.</p>
+      <p className='footer-content'>Shubhvastram is an Indian clothing brand based in Jamshedpur, Jharkhand, INDIA.  We create ethnic and comfortable clothes with a pinch of traditional touch. We are a clothing label that specializes in Ethnic and customizable wear. We also create western wear, including tops, dresses, jumpsuits, coordinated sets, etc.</p>
 
       <h4 className='footer-c'>© 2023 Shubvastram </h4>
     </section>
