@@ -42,7 +42,7 @@ export default function MenuComponent({ collNav ,onClose}) {
         },
     ];
     const onClick = (e) => {
-        console.log('click ', e);
+        // console.log('click ', e);
         router.push(`/collections/${e.key}`)
         onClose()
 

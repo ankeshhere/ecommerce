@@ -31,7 +31,7 @@ const SliderLayout = () => {
 
 
     const onChange = (currentSlide) => {
-        console.log(currentSlide);
+        // console.log(currentSlide);
     };
     return (
         <Carousel autoplay>

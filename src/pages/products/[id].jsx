@@ -6,7 +6,7 @@ import { createClient } from 'contentful'
 //   }
 // }
 export async function getServerSideProps(context) {
-  console.log('ID ', context.params.id)
+  // console.log('ID ', context.params.id)
   const client = createClient({
     space: process.env.SPACE_ID || '',
     accessToken: process.env.TOKEN_ID || ''
@@ -27,7 +27,7 @@ import Product from 'components/Product'
 import SectionHeading from 'components/SectionHeading'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
-
+import Showdown from 'showdown'
 export default function Collection({ proddata,slug }) {
   const [windowsize, setwindowsize] = useState(0)
   const [baseurl, setbaseurl] = useState("")
@@ -36,9 +36,12 @@ export default function Collection({ proddata,slug }) {
     setbaseurl(window.location.origin)
   })
   const handleChange = value => {
-    console.log(`selected ${value}`)
+    // console.log(`selected ${value}`)
   }
+  
+  var converter = new Showdown.Converter()
   console.log("PD", proddata);
+  // console.log("PD");
   return (
     <>
       <div style={{ marginTop: 30 }}>
@@ -57,7 +60,6 @@ export default function Collection({ proddata,slug }) {
               <h4>{proddata.name}</h4>
               <div className='star'>
                 <Rate disabled defaultValue={5} />
-
               </div>
               {
                 proddata.inStock == true ? <p>Rs. {proddata.price}</p> : <><p style={{ textDecoration: 'line-through' }}>Rs. {proddata.price} </p><p>OUT OF STOCK</p></>
@@ -80,9 +82,9 @@ export default function Collection({ proddata,slug }) {
 
               }
 
-              <p className='desc'>
-                {proddata.description}
-              </p>
+              <div className='desc' dangerouslySetInnerHTML={{__html: converter.makeHtml(proddata.description)}}>
+                
+              </div>
 
               <div className='row d-flex justify-content-center align-items-center cc my-4'>
                 <div className='col-6 sz'>Size</div>

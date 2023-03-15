@@ -23,7 +23,7 @@ export default function Navbar() {
     setColl(v.items.reverse())
   }
   useEffect(() => {
-    console.log('render');
+    // console.log('render');
     getCollections()
   }, [])
   // console.log('collNav ',collNav);
