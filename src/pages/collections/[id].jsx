@@ -111,14 +111,16 @@ export default function Collection({ collection, products, subc }) {
                   >
                     {item}
                   </h4>
+                <div className='row'>
                   {
                     products.map((i, idx) => {
                       const n = Math.floor(Math.random() * 100)
                       if (i.fields.hasOwnProperty('subCollection') && i.fields.subCollection.fields.subCollectionTitle == item) {
-                        return <Product item={i} key={n} />
+                        return <Product item={i}  />
                       }
                     })
                   }
+                  </div>
                 </div>
               })
             }
