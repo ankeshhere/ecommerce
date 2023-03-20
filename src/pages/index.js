@@ -27,7 +27,7 @@ export async function getServerSideProps(context) {
 
   // console.log('res ', v.items)
   return {
-    props: { collection: v.items, prods: p.items.slice(0, 5) },
+    props: { collection: v.items, prods: p.items.slice(0, 8) },
   }
 }
 // export async function getStaticProps () {
