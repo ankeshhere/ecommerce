@@ -6,7 +6,7 @@ import { createClient } from 'contentful'
 //   }
 // }
 export async function getServerSideProps(context) {
-  // console.log('ID ', context.params.id)
+  console.log('IDDDD ', context.params.id)
   const client = createClient({
     space: process.env.SPACE_ID || '',
     accessToken: process.env.TOKEN_ID || ''
@@ -19,10 +19,10 @@ export async function getServerSideProps(context) {
   const prods = await client.getEntries({
     content_type: 'product',
   })
-
+  
   const fff = prods.items.filter((item) => {
-    // console.log('ii', item.fields.collection[0].fields.slug)
-    return item.fields.collection[0].fields.slug == context.params.id
+    console.log('ii', item.fields.collection[0].fields)
+    return item.fields.collection[0].fields && item.fields.collection[0].fields.slug == context.params.id
   })
   // console.log('FFF' ,fff);
   const subc = new Set();

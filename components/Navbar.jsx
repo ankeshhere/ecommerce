@@ -61,14 +61,14 @@ export default function Navbar() {
                 <ul>
                   {
 
-                    collNav.length > 0 && collNav.map((i, idnex) => {
+                    // collNav.length > 0 && collNav.map((i, idnex) => {
 
-                      if (i.fields.categoryName.fields.categoryName == "CLOTHING") {
-                        // console.log("II",i)
-                        return <Link key={idnex} href={`/collections/${i.fields.slug}`}>{i.fields.collectionName}</Link>
-                      }
-                      return null;
-                    })
+                    //   if (i.fields.categoryName.fields.categoryName == "CLOTHING") {
+                    //     // console.log("II",i)
+                    //     return <Link key={idnex} href={`/collections/${i.fields.slug}`}>{i.fields.collectionName}</Link>
+                    //   }
+                    //   return null;
+                    // })
                   }
                   {/* <a href='#'>Indian</a>
 

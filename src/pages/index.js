@@ -11,11 +11,11 @@ import { createClient } from 'contentful'
 //   }
 // }
 export async function getServerSideProps(context) {
-  // console.log('SPACE_ID ', process.env.SPACE_ID)
-  // console.log('accessToken ', process.env.TOKEN_ID)
+  console.log('SPACE_ID ', process.env.SPACE_ID)
+  console.log('accessToken ', process.env.TOKEN_ID)
   const client = createClient({
     space: process.env.SPACE_ID || '',
-    accessToken: process.env.TOKEN_ID || ''
+    accessToken:process.env.TOKEN_ID || ''
   })
   // let vid = capitalizeFirstLetter(context.params.id).replaceAll('-', ' ')
   const p = await client.getEntries({
