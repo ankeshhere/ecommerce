@@ -1,9 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+import getProductsHomePage from "@/actions/getProductsHomePage";
 import Product from "@/components/product";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+  const products = await getProductsHomePage()
+  console.log(products);
+  
   return (
     <div>
       <div className="bg-[#ab4849] p-2 flex items-center justify-center text-sm font-heading text-white font-bold">
