@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default async function Home() {
   const products = await getProductsHomePage()
-  console.log(products);
-  
+  // console.log(products);
+
   return (
     <div>
       <div className="bg-[#ab4849] p-2 flex items-center justify-center text-sm font-heading text-white font-bold">
@@ -24,11 +24,16 @@ export default async function Home() {
 
         <h2 className="font-heading text-4xl font-bold flex items-center justify-center my-8 text-primary">New Arrivals</h2>
         <div className="grid gap-2 p-2 grid-cols-2 sm:grid-cols-2 lg:gap-r lg:grid-cols-5">
+          {
+            products.length > 0 && products.map((item,index) => {
+              return <Product prodDetails={item} key={index}/>
+            })
+          }
+
+          {/* <Product />
           <Product />
           <Product />
-          <Product />
-          <Product />
-          <Product />
+          <Product /> */}
         </div>
       </div>
 
@@ -59,7 +64,7 @@ export default async function Home() {
               </div>
             </Link>
 
-            <Link  href={'/custom-wear'} className="relative overflow-hidden rounded-2xl shadow-lg group">
+            <Link href={'/custom-wear'} className="relative overflow-hidden rounded-2xl shadow-lg group">
               <img src="/custom.jpeg" alt="Travel" className="w-full h-full object-cover" />
               <div
                 className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

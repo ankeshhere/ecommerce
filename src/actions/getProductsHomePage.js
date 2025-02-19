@@ -13,6 +13,8 @@ export default async function getProductsHomePage() {
     })
     const p = await client.getEntries({
         content_type: 'products',
+        limit: 5,
+        order: "-sys.createdAt",
     })
     return p.items.slice(0, 8) || false
 }
