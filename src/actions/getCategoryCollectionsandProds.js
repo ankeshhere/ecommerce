@@ -1,6 +1,6 @@
 "use server";
 const contentful = require('contentful')
-export default async function getCategoryCollectionsandProds(category) {
+export default async function getCategoryCollections(category) {
 
     const client = contentful.createClient({
         space: 'q0pkcppwl2hr',
@@ -12,7 +12,7 @@ export default async function getCategoryCollectionsandProds(category) {
         "fields.categoryName.sys.contentType.sys.id": "category",
         "fields.categoryName.fields.slug": category
     })
-    // console.log(p.items);
+    console.log(p.items);
 
     const collectionNames = []
     p.items.map((item) => {
