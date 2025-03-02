@@ -14,8 +14,11 @@ export default async function Home() {
         <p>Free Delivery on Orders above Rs. 999</p>
       </div>
       <div className="relative max-w-[1300px] mx-auto h-[400px]">
-        <Image src={'/banner2.jpg'} fill
-          className="object-cover"
+        <Image src={'/banner-pc.jpg'} fill
+          className="object-cover hidden md:block"
+          priority alt="Banner" />
+        <Image src={'/banner-mobile.jpg'} fill
+          className="object-cover md:hidden block"
           priority alt="Banner" />
       </div>
 

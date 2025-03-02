@@ -21,8 +21,10 @@ export default function Product({ prodDetails }) {
                 <p className="sm:text-lg leading-5 sm:leading-6 text-gray-800 font-sans md:text-sm">{firstUppercase(prodDetails.fields.productName) }</p>
 
             </div>
-            <div className=" px-4 pb-4 items-center flex justify-center">
-                <p className='font-heading font-extrabold font-primary'>INR {formatRupee(prodDetails.fields.price)}</p>
+            <div className=" px-4 pb-4 items-center flex flex-col justify-center">
+               
+
+                {!prodDetails.fields.inStock ? <p className='text-slate-500 font-bold mt-4'>OUT OF STOCK</p> :  <p className='font-heading font-extrabold font-primary'>INR {formatRupee(prodDetails.fields.price)}</p>}
             </div>
         </Link>
     )

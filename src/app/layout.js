@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import Footer from "@/components/footer";
-
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata = {
   title: "Create Next App",
@@ -9,15 +9,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
+  return ( 
     <html lang="en">
       <body
         className="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal"
       >
+         <NextTopLoader color="#000"/>
         <Navbar />
         {children}
         <Footer />
       </body>
     </html>
+    
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -19,11 +20,19 @@ export default function Navbar() {
                 <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-2" id="menu">
                     <nav>
                         <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/ethnic-wear">ETHNIC WEAR</Link></li>
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/western-wear">WESTERN WEAR</Link></li>
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/custom-wear">CUSTOM WEAR</Link>
+                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/ethnic-wear" onClick={() => {
+                                window.location.href = "/ethnic-wear";
+                            }}>ETHNIC WEAR</Link></li>
+                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/western-wear" onClick={() => {
+                                window.location.href = "/western-wear";
+                            }}>WESTERN WEAR</Link></li>
+                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/custom-wear" onClick={() => {
+                                window.location.href = "/custom-wear";
+                            }}>CUSTOM WEAR</Link>
                             </li>
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/about-us">ABOUT US</Link>
+                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/about-us" onClick={() => {
+                                window.location.href = "/about-us";
+                            }}>ABOUT US</Link>
                             </li>
                         </ul>
                     </nav>
