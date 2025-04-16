@@ -20,7 +20,7 @@ export default async function Home() {
         {/* <Image src={'/banner-mobile.jpg'} fill
           className="object-cover md:hidden block"
           priority alt="Banner" /> */}
-          <img src={'/banner-mobile.jpg'}  className="object-contain md:hidden block"
+          <img src={'/banner-mobile.jpg'}  className="object-cover w-full md:hidden block"
            alt="Banner" />
           <img src={'/banner-pc.jpg'}  className="object-cover hidden md:block h-[420px] w-full"
            alt="Banner" />
