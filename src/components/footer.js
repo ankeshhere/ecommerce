@@ -45,7 +45,7 @@ export default function Footer() {
                             </Link>
                             <p className="mr-1 text-gray-800 font-bold font-heading mt-2">Address 2:</p>
                             <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800 text-sm font-heading">
-                                Air Base Colony, Ramnagar, Kadma, Jamshedpur, Jharkhand 831005.
+                                Adarsh Nagar, ward no 6, near forest checkpost, chakradharpur jharkhand 833102
                             </Link>
                         </div>
                     </div>

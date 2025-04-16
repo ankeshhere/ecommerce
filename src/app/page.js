@@ -14,12 +14,16 @@ export default async function Home() {
         <p>Free Delivery on Orders above Rs. 999</p>
       </div>
       <div className="relative max-w-[1300px] mx-auto h-[400px]">
-        <Image src={'/banner-pc.jpg'} fill
+        {/* <Image src={'/banner-pc.jpg'} fill
           className="object-cover hidden md:block"
-          priority alt="Banner" />
-        <Image src={'/banner-mobile.jpg'} fill
+          priority alt="Banner" /> */}
+        {/* <Image src={'/banner-mobile.jpg'} fill
           className="object-cover md:hidden block"
-          priority alt="Banner" />
+          priority alt="Banner" /> */}
+          <img src={'/banner-mobile.jpg'}  className="object-contain md:hidden block"
+           alt="Banner" />
+          <img src={'/banner-pc.jpg'}  className="object-cover hidden md:block h-[420px] w-full"
+           alt="Banner" />
       </div>
 
       <div className="max-w-[1300px] mx-auto">
@@ -94,11 +98,11 @@ export default async function Home() {
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-800 rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-red-500 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">DAPP Development</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Sustainable Fashion</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">A decentralized application (dapp) is an application built on a
-                      decentralized network that combines a smart contract and a frontend user interface.</p>
+                    <p className="mb-2 text-gray-600">Shubhvastram is committed to environmentally responsible practices, using organic fabrics, natural dyes, and ethical production methods to create timeless clothing for all age groups.
+                    .</p>
                   </div>
                 </div>
               </div>
@@ -107,11 +111,10 @@ export default async function Home() {
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-zinc-500 rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-zinc-300 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Web 3.0 Development</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Family Collection Design</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">Web 3.0 is the third generation of Internet services that will
-                      focus on understanding and analyzing data to provide a semantic web.</p>
+                    <p className="mb-2 text-gray-600">Create coordinated looks for the entire family with our curated collection sets designed for weddings, festivals, and cultural celebrations..</p>
                   </div>
                 </div>
               </div>
@@ -122,11 +125,10 @@ export default async function Home() {
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-blue-400 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Project Audit</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Handcrafted Detailing</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">A Project Audit is a formal review of a project, which is intended
-                      to assess the extent up to which project management standards are being upheld.</p>
+                    <p className="mb-2 text-gray-600">Our artisans add personal touches with hand embroidery, block printing, and regional craftsmanship techniques that preserve Indian heritage.</p>
                   </div>
                 </div>
               </div>
@@ -135,11 +137,10 @@ export default async function Home() {
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-yellow-400 rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-yellow-400 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Hacking / RE</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Made-to-Order Services</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-yellow-400 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">A security hacker is someone who explores methods for breaching
-                      defenses and exploiting weaknesses in a computer system or network.</p>
+                    <p className="mb-2 text-gray-600">Every outfit is crafted on demand, ensuring minimal waste and maximum personalization, reflecting your unique style and values.</p>
                   </div>
                 </div>
               </div>
@@ -148,11 +149,10 @@ export default async function Home() {
                   <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-green-500 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Bot/Script Development</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Customized Ethnic Wear</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-green-500 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">Bot development frameworks were created as advanced software tools
-                      that eliminate a large amount of manual work and accelerate the development process.</p>
+                    <p className="mb-2 text-gray-600">We specialize in tailoring traditional Indian wear to your exact preferences — from fabric to fit — for men, women, and children.</p>
                   </div>
                 </div>
               </div>
