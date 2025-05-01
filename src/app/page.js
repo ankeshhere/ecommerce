@@ -92,6 +92,7 @@ export default async function Home() {
                   <div className="relative h-full p-5 bg-white border-2 border-primary-500 rounded-lg">
                     <div className="flex items-center -mt-1">
                       <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Sustainable Fashion</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Sustainable Fashion</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-primary-500 uppercase">------------</p>
                     <p className="mb-2 text-gray-600">
