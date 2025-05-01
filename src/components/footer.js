@@ -17,7 +17,7 @@ export default function Footer() {
                             <rect x="14" y="11" width="7" height="12"></rect>
                         </svg>
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span> */}
-                            <Image src={'/logo.jpg'} width={180} height={65} alt='LOGO' />
+                            <Image src={'/logo-rc.png'} width={180} height={65} alt='LOGO' />
                         </Link>
                         <div className="mt-6 lg:max-w-sm">
                             <p className="text-sm text-gray-800 font-heading">
@@ -45,7 +45,7 @@ export default function Footer() {
                             </Link>
                             <p className="mr-1 text-gray-800 font-bold font-heading mt-2">Address 2:</p>
                             <Link href="#" target="_blank" rel="noopener noreferrer" aria-label="Our address" title="Our address" className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800 text-sm font-heading">
-                                Air Base Colony, Ramnagar, Kadma, Jamshedpur, Jharkhand 831005.
+                                Adarsh Nagar, ward no 6, near forest checkpost, Chakradharpur Jharkhand 833102
                             </Link>
                         </div>
                     </div>

@@ -10,11 +10,11 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="bg-[#ab4849] p-2 flex items-center justify-center text-sm font-heading text-white font-bold">
+      <div className="bg-secondary p-2 flex items-center justify-center text-sm font-heading text-white font-bold">
         <p>Free Delivery on Orders above Rs. 999</p>
       </div>
-      <div className="relative max-w-[1300px] mx-auto h-[400px]">
-        <Image src={'/banner2.jpg'} fill
+      <div className="relative w-full md:max-w-[1300px] mx-auto h-[200px] md:h-[400px]">
+        <Image src={'/banner.jpg'} fill
           className="object-cover"
           priority alt="Banner" />
       </div>
@@ -25,8 +25,8 @@ export default async function Home() {
         <h2 className="font-heading text-4xl font-bold flex items-center justify-center my-8 text-primary">New Arrivals</h2>
         <div className="grid gap-2 p-2 grid-cols-2 sm:grid-cols-2 lg:gap-r lg:grid-cols-5">
           {
-            products.length > 0 && products.map((item,index) => {
-              return <Product prodDetails={item} key={index}/>
+            products.length > 0 && products.map((item, index) => {
+              return <Product prodDetails={item} key={index} />
             })
           }
 
@@ -88,27 +88,29 @@ export default async function Home() {
             <div className="flex flex-col w-full mb-10 sm:flex-row">
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-800 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-red-500 rounded-lg">
+                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-primary rounded-lg"></span>
+                  <div className="relative h-full p-5 bg-white border-2 border-primary-500 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">DAPP Development</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Sustainable Fashion</h3>
                     </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-indigo-500 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">A decentralized application (dapp) is an application built on a
-                      decentralized network that combines a smart contract and a frontend user interface.</p>
+                    <p className="mt-3 mb-1 text-xs font-medium text-primary-500 uppercase">------------</p>
+                    <p className="mb-2 text-gray-600">
+                      Shubhvastram is committed to environmentally responsible practices, using organic fabrics, natural dyes, and ethical production methods to create timeless clothing for all age groups.
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="w-full sm:w-1/2">
                 <div className="relative h-full ml-0 md:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-zinc-500 rounded-lg"></span>
+                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-secondary rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-zinc-300 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Web 3.0 Development</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Customized Ethnic Wear</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">Web 3.0 is the third generation of Internet services that will
-                      focus on understanding and analyzing data to provide a semantic web.</p>
+                    <p className="mb-2 text-gray-600">
+                      We specialize in tailoring traditional Indian wear to your exact preferences — from fabric to fit — for men, women, and children.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -116,40 +118,41 @@ export default async function Home() {
             <div className="flex flex-col w-full mb-5 sm:flex-row">
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded-lg"></span>
+                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-primary rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-blue-400 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Project Audit</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Family Collection Design</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">A Project Audit is a formal review of a project, which is intended
-                      to assess the extent up to which project management standards are being upheld.</p>
+                    <p className="mb-2 text-gray-600">
+                      Create coordinated looks for the entire family with our curated collection sets designed for weddings, festivals, and cultural celebrations.
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
                 <div className="relative h-full ml-0 mr-0 sm:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-yellow-400 rounded-lg"></span>
-                  <div className="relative h-full p-5 bg-white border-2 border-yellow-400 rounded-lg">
+                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-secondary rounded-lg"></span>
+                  <div className="relative h-full p-5 bg-white border-2 border-secondary rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Hacking / RE</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Handcrafted Detailing</h3>
                     </div>
-                    <p className="mt-3 mb-1 text-xs font-medium text-yellow-400 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">A security hacker is someone who explores methods for breaching
-                      defenses and exploiting weaknesses in a computer system or network.</p>
+                    <p className="mt-3 mb-1 text-xs font-medium text-secondary uppercase">------------</p>
+                    <p className="mb-2 text-gray-600">
+                      Our artisans add personal touches with hand embroidery, block printing, and regional craftsmanship techniques that preserve Indian heritage.
+                    </p>
                   </div>
                 </div>
               </div>
               <div className="w-full sm:w-1/2">
                 <div className="relative h-full ml-0 md:mr-10">
-                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded-lg"></span>
+                  <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-primary rounded-lg"></span>
                   <div className="relative h-full p-5 bg-white border-2 border-green-500 rounded-lg">
                     <div className="flex items-center -mt-1">
-                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Bot/Script Development</h3>
+                      <h3 className="my-2 ml-3 text-lg font-bold text-gray-800">Made-to-Order Services</h3>
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-green-500 uppercase">------------</p>
-                    <p className="mb-2 text-gray-600">Bot development frameworks were created as advanced software tools
-                      that eliminate a large amount of manual work and accelerate the development process.</p>
+                    <p className="mb-2 text-gray-600">Every outfit is crafted on demand, ensuring minimal waste and maximum personalization, reflecting your unique style and values.</p>
                   </div>
                 </div>
               </div>

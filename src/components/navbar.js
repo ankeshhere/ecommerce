@@ -5,11 +5,11 @@ import React from 'react'
 export default function Navbar() {
     return (
 
-        <nav id="header" className="w-full z-30 top-0 py-1 border-t-4 border-primary border-b-2 border-b-gray-50 shadow-sm">
+        <nav id="header" className="bg-primary w-full z-30 top-0 py-1 border-t-4 border-primary shadow-sm">
             <div className="max-w-[1300px] container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3">
 
                 <label htmlFor="menu-toggle" className="cursor-pointer md:hidden block">
-                    <svg className="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <svg className="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <title>menu</title>
                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
                     </svg>
@@ -18,12 +18,12 @@ export default function Navbar() {
 
                 <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-2" id="menu">
                     <nav>
-                        <ul className="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/ethnic-wear">ETHNIC WEAR</Link></li>
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/western-wear">WESTERN WEAR</Link></li>
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/custom-wear">CUSTOM WEAR</Link>
+                        <ul className="md:flex items-center justify-between text-base text-white pt-4 md:pt-0">
+                            <li><Link className="inline-block no-underline hover:text-link hover:font-extrabold font-heading font-bold text-sm transition-all duration-150 py-2 px-4" href="/ethnic-wear">ETHNIC WEAR</Link></li>
+                            <li><Link className="inline-block no-underline hover:text-link hover:font-extrabold font-heading font-bold text-sm transition-all duration-150 py-2 px-4" href="/western-wear">WESTERN WEAR</Link></li>
+                            <li><Link className="inline-block no-underline hover:text-link hover:font-extrabold font-heading font-bold text-sm transition-all duration-150 py-2 px-4" href="/custom-wear">CUSTOM WEAR</Link>
                             </li>
-                            <li><Link className="inline-block no-underline hover:text-primary hover:font-extrabold font-heading font-bold text-sm hover:underline-offset-8 hover:underline py-2 px-4" href="/about-us">ABOUT US</Link>
+                            <li><Link className="inline-block no-underline hover:text-link hover:font-extrabold font-heading font-bold text-sm transition-all duration-150 py-2 px-4" href="/about-us">ABOUT US</Link>
                             </li>
                         </ul>
                     </nav>
@@ -31,11 +31,11 @@ export default function Navbar() {
 
                 <div className="order-1 md:order-1">
                     <Link className="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="/">
-                        <Image src={'/logo.jpg'} width={180} height={65} alt='LOGO' />
+                        <Image src={'/logo-rc.png'} alt='Logo Shubhvastram' width={130} height={65}/>
                     </Link>
                 </div>
 
-                <div className="order-2 md:order-3 flex items-center" id="nav-content">
+                {/* <div className="order-2 md:order-3 flex items-center" id="nav-content">
 
                     <a className="inline-block no-underline hover:text-black" href="#">
                         <svg className="fill-current hover:text-black" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -52,7 +52,7 @@ export default function Navbar() {
                         </svg>
                     </a>
 
-                </div>
+                </div> */}
             </div>
         </nav>
     )

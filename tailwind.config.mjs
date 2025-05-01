@@ -9,7 +9,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary:"#7c2325"
+        primary:"#2a4c09",
+        secondary:"#417f06",
+        link:"#c7e6ce"
       },
       fontFamily: {
         'heading': ['"Nunito Sans"', 'sans-serif']
