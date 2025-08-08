@@ -96,7 +96,7 @@ export default async function Home() {
                     </div>
                     <p className="mt-3 mb-1 text-xs font-medium text-primary-500 uppercase">------------</p>
                     <p className="mb-2 text-gray-600">
-                      Shubhvastram is committed to environmentally responsible practices, using organic fabrics, natural dyes, and ethical production methods to create timeless clothing for all age groups.
+                      Shubhvastram is committed to Environmentally Responsible practices, using organic fabrics, natural dyes, and ethical production methods to create timeless clothing for all age groups.
                     </p>
                   </div>
                 </div>
